@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | AnimeZone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section>
+    <h1>
+        Welcome to Edustone Hub
+    </h1>
+    <div class="login-container">
+        <h2>Login to AnimeZone</h2>
+        <form class="login-form" onsubmit="login(event)">
+          <input type="text" id="username" placeholder="Username" required />
+          <input type="password" id="password" placeholder="Password" required />
+          <button type="submit">Login</button>
+          <p id="error" class="error-msg"></p>
+        </form>
+        <button id="themeToggle" class="theme-btn">🌗 Toggle Theme</button>
+      </div>
+  </section>
+
+  <script>
+    // Toggle theme
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+    });
+
+    // Simple login (for demo)
+    function login(e) {
+      e.preventDefault();
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+
+      // Demo credentials
+      if (user === "admin" && pass === "1234") {
+        localStorage.setItem("isLoggedIn", "true");
+        window.location.href = "index.html";
+      } else {
+        document.getElementById("error").textContent = "Invalid credentials!";
+      }
+    }
+  </script>
+</body>
+</html>
