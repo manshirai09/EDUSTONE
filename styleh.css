@@ -1,0 +1,73 @@
+body{
+    background: linear-gradient(to right, #a7d7f9, #3d4a87);
+    
+}
+h1{
+    color:rgb(0, 0, 0);
+    text-align:center;
+    padding: 50px;
+    font-size: 4em;
+}
+.content{
+    display: flex;
+}
+.buttons{
+    flex-basis: 50%;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+
+    align-items: center;
+    
+    
+}
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    width: 250px;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    background: linear-gradient(135deg,white, #6ab2f2, #0044aa);
+    color: white;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+.btn:hover{
+    background: linear-gradient(135deg,white, #0044aa, #6ab2f2);
+    transition: 0.3s;
+}
+.course-info {
+    margin-top: 1rem;
+    max-width: 400px;
+  }
+  
+  .course-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .course-desc {
+    font-size: 0.95rem;
+    margin: 1rem 0;
+    color: #333;
+  }
+  
+  .start-learning {
+    padding: 0.7rem 1.5rem;
+    border: 1px solid #4c9aff;
+    background-color: white;
+    color: #0077ff;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+
+.vid{
+    flex-basis: 50%;
+    padding: 20px;
+    
+}

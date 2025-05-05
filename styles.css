@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #a7d7f9, #3d4a87);
+    color: #000;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+  
+  .left-panel {
+    width: 50%;
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+  }
+  
+  .buttons .btn {
+    display: block;
+    width: 150px;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    background: linear-gradient(to bottom, #6ab2f2, #0044aa);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .avatar {
+    width: 120px;
+    margin: 2rem 0;
+  }
+  
+  .course-info {
+    margin-top: 1rem;
+    max-width: 400px;
+  }
+  
+  .course-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .course-desc {
+    font-size: 0.95rem;
+    margin: 1rem 0;
+    color: #333;
+  }
+  
+  .start-learning {
+    padding: 0.7rem 1.5rem;
+    border: 1px solid #4c9aff;
+    background-color: white;
+    color: #0077ff;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .right-panel {
+    width: 50%;
+  }
+  
+  .main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
