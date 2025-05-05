@@ -26,7 +26,7 @@ h1{
     display: flex;
 }
 .left-panel{
-    flex-basis: 35%;
+    flex-basis: 40%;
     display: flex;
     justify-content: right;
     
