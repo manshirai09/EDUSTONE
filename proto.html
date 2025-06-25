@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rai quizzes</title>
+        <style>
+            @import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
+            @import url(https://fonts.googleapis.com/css2?family=Open+Sans&display=swap);
+            @import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200);
+        </style>
+    </head>
+    <script>src="Quiz.py"</script>
+    <body>
+        <div id="webcrumbs">
+            <div class="w-full max-w-7xl mx-auto px-4 py-8 bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen">
+                <header class="text-center mb-12">
+                    <div class="flex items-center justify-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-primary-500 rounded-xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-2xl">smart_toy</span>
+                        </div>
+                        <h1
+                            class="text-4xl font-bold bg-gradient-to-r from-primary-600 to-blue-600 bg-clip-text text-transparent"
+                        >
+                            Quizshi
+                        </h1>
+                    </div>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Master programming concepts with AI-powered 3D animations and interactive quizzes
+                    </p>
+                </header>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                    <div class="lg:col-span-2">
+                        <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+                            <div class="bg-gradient-to-r from-primary-500 to-blue-500 p-6 text-white">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h2 class="text-2xl font-bold mb-2">Neuralis Explanation</h2>
+                                        <p class="text-primary-100">3D Animation Tutorial</p>
+                                    </div>
+                                    <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-2xl">play_arrow</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative bg-gray-900 h-80">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div
+                                        class="w-24 h-24 bg-primary-500 rounded-full animate-pulse flex items-center justify-center"
+                                    >
+                                        <span class="material-symbols-outlined text-white text-3xl">psychology</span>
+                                    </div>
+                                </div>
+                                <div class="absolute bottom-4 left-4 right-4">
+                                    <div class="bg-black/70 rounded-lg p-3 text-white text-sm">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <div
+                                                class="w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center"
+                                            >
+                                                <span class="material-symbols-outlined text-xs">smart_toy</span>
+                                            </div>
+                                            <span class="font-medium">AI Agent</span>
+                                        </div>
+                                        <p>
+                                            &quot;Let me explain how binary search works with this 3D
+                                            visualization...&quot;
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="absolute top-4 right-4 flex gap-2">
+                                    <button
+                                        class="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-colors"
+                                    >
+                                        <span class="material-symbols-outlined">fullscreen</span>
+                                    </button>
+                                    <button
+                                        class="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-colors"
+                                    >
+                                        <span class="material-symbols-outlined">volume_up</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-semibold">Binary Search Algorithm</h3>
+                                    <div class="flex items-center gap-2 text-sm text-gray-500">
+                                        <span class="material-symbols-outlined text-lg">schedule</span>
+                                        <span>5:32</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Watch our AI agent demonstrate binary search through interactive 3D animations,
+                                    breaking down each step of the algorithm.
+                                </p>
+                                <div class="flex gap-2 flex-wrap">
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm"
+                                        >Algorithm</span
+                                    >
+                                    <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm"
+                                        >Beginner</span
+                                    >
+                                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm"
+                                        >Data Structures</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <section>
+                        <div class="bg-white rounded-2xl shadow-lg p-6 mb-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-gray-700">Progress</span>
+                                <span class="text-sm font-medium text-gray-700">
+                                    <span id="current-num">1</span>/<span id="total-num">5</span>
+                                </span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div id="progress-bar" class="bg-primary-500 h-2 rounded-full transition-all duration-300" style="width: 20%"></div>
+                            </div>
+                            <div class="mt-2 text-right">
+                                <span class="text-sm text-gray-600">Score: <span id="current-score" class="font-semibold">0</span></span>
+                            </div>
+                        </div>
+                
+                         <!--Quiz Container--> 
+                        <div id="quiz-box" class="bg-white rounded-2xl shadow-lg p-6">
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary-600">quiz</span>
+                                </div>
+                                <h3 class="text-xl font-semibold">Quick Quiz</h3>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="p-4 bg-gray-50 rounded-xl">
+                                    <p id="question" class="font-medium mb-4 text-lg"></p>
+                                    <div class="space-y-3">
+                                        <button id="option-A" class="option-btn w-full text-left p-3 bg-white hover:bg-primary-50 border border-gray-200 hover:border-primary-300 rounded-lg transition-all duration-200"></button>
+                                        <button id="option-B" class="option-btn w-full text-left p-3 bg-white hover:bg-primary-50 border border-gray-200 hover:border-primary-300 rounded-lg transition-all duration-200"></button>
+                                        <button id="option-C" class="option-btn w-full text-left p-3 bg-white hover:bg-primary-50 border border-gray-200 hover:border-primary-300 rounded-lg transition-all duration-200"></button>
+                                        <button id="option-D" class="option-btn w-full text-left p-3 bg-white hover:bg-primary-50 border border-gray-200 hover:border-primary-300 rounded-lg transition-all duration-200"></button>
+                                    </div>
+                                </div>
+                                
+                                <!--Feedback Area--> 
+                                <div id="feedback" class="mt-4 text-lg font-semibold min-h-[24px]"></div>
+                            </div>
+                        </div>
+                
+                        <!--Results Container-->  
+                        <div id="result" class="bg-white rounded-2xl shadow-lg p-8 text-center hidden">
+                            <div class="mb-6">
+                                <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <span class="material-symbols-outlined text-primary-600 text-3xl">emoji_events</span>
+                                </div>
+                                <h2 class="text-2xl font-bold text-gray-800 mb-2">Quiz Complete!</h2>
+                                <p id="final-score" class="text-xl font-semibold text-primary-600 mb-2"></p>
+                                <p id="score-message" class="text-gray-600 mb-6"></p>
+                            </div>
+                            
+                            <button onclick="restartQuiz()" class="bg-primary-500 hover:bg-primary-600 text-white px-8 py-3 rounded-xl font-medium transition-colors">
+                                Take Quiz Again
+                            </button>
+                        </div>
+                    </div> 
+                     </section>
+                    
+                        <div class="bg-white rounded-2xl shadow-lg p-6">
+                            <h3 class="text-lg font-semibold mb-4">Your Progress</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between text-sm mb-2">
+                                        <span>Arrays &amp; Strings</span> <span>85%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-green-500 h-2 rounded-full w-[85%]"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-2">
+                                        <span>Algorithms</span> <span>60%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-primary-500 h-2 rounded-full w-[60%]"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-2">
+                                        <span>Python</span> <span>40%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-orange-500 h-2 rounded-full w-[40%]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section id="webcrumbs">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                            <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 relative">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div
+                                        class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+                                    >
+                                        <span class="material-symbols-outlined text-white text-2xl">data_array</span>
+                                    </div>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <span class="bg-white/20 text-white px-2 py-1 rounded-full text-xs">12 videos</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">Arrays &amp; Lists</h3>
+                                <p class="text-gray-600 mb-4">
+                                    Master fundamental data structures with interactive 3D visualizations
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-2 text-sm text-gray-500">
+                                        <span class="material-symbols-outlined text-lg">schedule</span>
+                                        <span>2.5 hours</span>
+                                    </div>
+                                    <button
+                                        class="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-lg font-medium transition-colors"
+                                    >
+                                        Start
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div  class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                            <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 relative">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div
+                                        class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+                                    >
+                                        <span class="material-symbols-outlined text-white text-2xl">account_tree</span>
+                                    </div>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <span class="bg-white/20 text-white px-2 py-1 rounded-full text-xs">8 videos</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">Trees &amp; Graphs</h3>
+                                <p class="text-gray-600 mb-4">
+                                    Explore complex data structures through immersive 3D animations
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-2 text-sm text-gray-500">
+                                        <span class="material-symbols-outlined text-lg">schedule</span>
+                                        <span>3.2 hours</span>
+                                    </div>
+                                    <button
+                                        class="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-lg font-medium transition-colors"
+                                    >
+                                        Start
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div  class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                            <div class="h-48 bg-gradient-to-br from-green-700 to-green-900 relative">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div
+                                        class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+                                    >
+                                        <span class="material-symbols-outlined text-white text-2xl">account_tree</span>
+                                    </div>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <span class="bg-white/20 text-white px-2 py-1 rounded-full text-xs">12 videos</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">Python</h3>
+                                <p class="text-gray-600 mb-4">
+                                    Explore complex pyhton immersive 3D animations
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-2 text-sm text-gray-500">
+                                        <span class="material-symbols-outlined text-lg">schedule</span>
+                                        <span>7.2 hours</span>
+                                    </div>
+                                    <button
+                                        class="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-lg font-medium transition-colors"
+                                    >
+                                        Start
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                            <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 relative">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div
+                                        class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+                                    >
+                                        <span class="material-symbols-outlined text-white text-2xl">psychology</span>
+                                    </div>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <span class="bg-white/20 text-white px-2 py-1 rounded-full text-xs">15 videos</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">Algorithms</h3>
+                                <p class="text-gray-600 mb-4">
+                                    Learn sorting, searching, and optimization algorithms visually
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-2 text-sm text-gray-500">
+                                        <span class="material-symbols-outlined text-lg">schedule</span>
+                                        <span>4.1 hours</span>
+                                    </div>
+                                    <button
+                                        class="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-lg font-medium transition-colors"
+                                    >
+                                        Start
+                                    </button>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    <section class="bg-white rounded-3xl shadow-xl p-8">
+                        <div class="text-center mb-8">
+                            <h2 class="text-3xl font-bold mb-4">How Our AI Agent Works</h2>
+                            <p class="text-gray-600 max-w-2xl mx-auto">
+                                Our advanced AI creates personalized 3D animations to explain complex programming concepts
+                                in an intuitive way
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div class="text-center group">
+                                <div
+                                    class="w-20 h-20 bg-gradient-to-br from-primary-500 to-blue-500 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform"
+                                >
+                                    <span class="material-symbols-outlined text-white text-3xl">auto_awesome</span>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2">AI Analysis</h3>
+                                <p class="text-gray-600">
+                                    Our AI analyzes your question and identifies the best way to explain the concept
+                                </p>
+                            </div>
+                            <div class="text-center group">
+                                <div
+                                    class="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform"
+                                >
+                                    <span class="material-symbols-outlined text-white text-3xl">view_in_ar</span>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2">3D Visualization</h3>
+                                <p class="text-gray-600">
+                                    Complex algorithms come to life through interactive 3D animations and models
+                                </p>
+                            </div>
+                            <div class="text-center group">
+                                <div
+                                    class="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform"
+                                >
+                                    <span class="material-symbols-outlined text-white text-3xl">school</span>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2">Interactive Learning</h3>
+                                <p class="text-gray-600">
+                                    Test your understanding with quizzes that adapt to your learning progress
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+                </section>
+        
+        <script>
+            const quiz = [
+                {
+                    question: "What is Python?",
+                    options: { A: "Programming Language", B: "An animal", C: "From the class of snakes", D: "NOTA" },
+                    answer: "A"
+                },
+                {
+                    "question": "Which language is used for web development?",
+                    "options": {"A": "Python", "B": "Java", "C": "HTML", "D": "C++"},
+                    "answer": "C"
+                },
+                {
+                    "question": "What is 5 + 3?",
+                    "options": {"A": "6", "B": "7", "C": "8", "D": "9"},
+                    "answer": "C"
+                },
+                {
+                    "question": "Who is known as the father of computers?",
+                    "options": {"A": "Charles Babbage", "B": "Alan Turing", "C": "Bill Gates", "D": "Steve Jobs"},
+                    "answer": "A"
+                },
+                {
+                    "question": "Which keyword is used to define a function in Python?",
+                    "options": {"A": "function", "B": "define", "C": "def", "D": "fun"},
+                    "answer": "C"
+                },
+                {
+                    "question": "What is the output of: print(2 ** 3)?",
+                    "options": {"A": "6", "B": "8", "C": "9", "D": "16"},
+                    "answer": "B"
+                },
+                {
+                    "question": "Which data structure uses LIFO?",
+                    "options": {"A": "Queue", "B": "Array", "C": "Heap", "D": "Stack"},
+                    "answer": "D"
+                },
+                {
+                    "question": "Which sorting algorithm has O(n log n) average time complexity?",
+                    "options": {"A": "Bubble Sort", "B": "Insertion Sort", "C": "Quick Sort", "D": "Selection Sort"},
+                    "answer": "C"
+                },
+                {
+                    "question": "Which keyword is used for inheritance in Java?",
+                    "options": {"A": "extends", "B": "inherits", "C": "super", "D": "implements"},
+                    "answer": "A"
+                },
+                {
+                    "question": "What does the 'len()' function return?",
+                    "options": {"A": "Sum", "B": "Length", "C": "Average", "D": "Type"},
+                    "answer": "B"
+                },
+                {
+                    "question": "What is the default value of boolean in Java?",
+                    "options": {"A": "0", "B": "1", "C": "false", "D": "true"},
+                    "answer": "C"
+                },
+                {
+                    "question": "Which of these is a valid Python list?",
+                    "options": {"A": "(1,2,3)", "B": "{1,2,3}", "C": "[1,2,3]", "D": "<1,2,3>"},
+                    "answer": "C"
+                },
+                {
+                    "question": "Which is used for multiline comments in Python?",
+                    "options": {"A": "#", "B": "/* */", "C": "''' '''", "D": "//"},
+                    "answer": "C"
+                },
+                {
+                    "question": "What will be the output of: print(3 * '7')?",
+                    "options": {"A": "21", "B": "777", "C": "Error", "D": "73"},
+                    "answer": "B"
+                },
+                {
+                    "question": "What is the output of: print(type({})) in Python?",
+                    "options": {"A": "<class 'dict'>", "B": "<class 'set'>", "C": "<class 'list'>", "D": "<class 'tuple'>"},
+                    "answer": "A"
+                },
+                {
+                    "question": "Which of the following is NOT a primitive data type in Java?",
+                    "options": {"A": "int", "B": "float", "C": "String", "D": "char"},
+                    "answer": "C"
+                },
+                {
+                    "question": "Which keyword is used to handle exceptions in Python?",
+                    "options": {"A": "except", "B": "exception", "C": "catch", "D": "error"},
+                    "answer": "A"
+                },
+                {
+                    "question": "Which of these is used to initialize an array in C?",
+                    "options": {"A": "int a[] = {1, 2, 3};", "B": "array a = [1,2,3];", "C": "int a = {1,2,3};", "D": "array<int> a;"},
+                    "answer": "A"
+                },
+                {
+                    "question": "Which sorting algorithm is the best for mostly sorted data?",
+                    "options": {"A": "Bubble Sort", "B": "Merge Sort", "C": "Insertion Sort", "D": "Heap Sort"},
+                    "answer": "C"
+                },
+                {
+                    "question": "Which operator is used for string concatenation in Python?",
+                    "options": {"A": "*", "B": "+", "C": "&", "D": "#"},
+                    "answer": "B"
+                },
+                {
+                    "question": "In Big-O notation, what is the time complexity of linear search?",
+                    "options": {"A": "O(n)", "B": "O(log n)", "C": "O(n^2)", "D": "O(1)"},
+                    "answer": "A"
+                },
+                {
+                    "question": "Which of the following is not an access modifier in Java?",
+                    "options": {"A": "private", "B": "protected", "C": "package", "D": "public"},
+                    "answer": "C"
+                },
+                {
+                    "question": "What is recursion?",
+                    "options": {"A": "Loop within loop", "B": "Function calling itself", "C": "Infinite loop", "D": "Error handling"},
+                    "answer": "B"
+                },
+                {
+                    "question": "What is a 'null' pointer?",
+                    "options": {"A": "Pointer with value 0", "B": "Pointer with no address", "C": "Invalid pointer", "D": "All of the above"},
+                    "answer": "D"
+                },
+                {
+                    "question": "Which of these data structures can be used to implement recursion?",
+                    "options": {"A": "Queue", "B": "Stack", "C": "Linked List", "D": "Array"},
+                    "answer": "B"
+                },
+                {
+                    "question": "Which of the following is a valid Python variable name?",
+                    "options": {"A": "1name", "B": "name_1", "C": "name-1", "D": "name 1"},
+                    "answer": "B"
+                },
+                {
+                    "question": "What is the output of: print(10 / 3) in Python?",
+                    "options": {"A": "3", "B": "3.0", "C": "3.33", "D": "3.3333333333333335"},
+                    "answer": "D"
+                },
+                {
+                    "question": "Which function is used to get input from the user in Python?",
+                    "options": {"A": "scanf()", "B": "gets()", "C": "input()", "D": "read()"},
+                    "answer": "C"
+                },
+                {
+                    "question": "Which data structure is best suited for implementing undo operations?",
+                    "options": {"A": "Queue", "B": "Heap", "C": "Stack", "D": "Tree"},
+                    "answer": "C"
+                },
+                {
+                    "question": "What does IDE stand for?",
+                    "options": {"A": "Integrated Development Environment", "B": "Instant Debug Editor", "C": "Internet Data Emulator", "D": "Input Design Emulator"},
+                    "answer": "A"
+                }
+            ];
+    
+            let current = 0;
+            let score = 0;
+    
+            function updateProgress() {
+                const progress = ((current + 1) / quiz.length) * 100;
+                document.getElementById("progress-bar").style.width = progress + "%";
+                document.getElementById("current-num").textContent = current + 1;
+                document.getElementById("total-num").textContent = quiz.length;
+                document.getElementById("current-score").textContent = score;
+            }
+    
+            function loadQuestion() {
+                const q = quiz[current];
+                document.getElementById("question").textContent = q.question;
+                for (let key in q.options) {
+                    document.getElementById("option-" + key).textContent = `${key}. ${q.options[key]}`;
+                    document.getElementById("option-" + key).dataset.answer = key;
+                }
+                updateProgress();
+            }
+    
+            function selectAnswer(e) {
+                const selected = e.target.dataset.answer;
+                const correct = quiz[current].answer;
+                const feedback = document.getElementById("feedback");
+    
+                // Disable all buttons
+                document.querySelectorAll(".option-btn").forEach(btn => {
+                    btn.disabled = true;
+                    btn.style.opacity = "0.7";
+                });
+    
+                if (selected === correct) {
+                    score++;
+                    feedback.textContent = "✅ Correct!";
+                    feedback.className = "mt-4 text-lg font-semibold text-green-400";
+                    e.target.classList.add("ring-2", "ring-green-400");
+                } else {
+                    feedback.textContent = `❌ Wrong! Correct: ${correct}. ${quiz[current].options[correct]}`;
+                    feedback.className = "mt-4 text-lg font-semibold text-red-400";
+                    e.target.classList.add("ring-2", "ring-red-400");
+                    // Highlight correct answer
+                    document.getElementById("option-" + correct).classList.add("ring-2", "ring-green-400");
+                }
+    
+                current++;
+                if (current < quiz.length) {
+                    setTimeout(() => {
+                        feedback.textContent = "";
+                        feedback.className = "mt-4 text-lg font-semibold min-h-[24px]";
+                        // Re-enable buttons and remove highlights
+                        document.querySelectorAll(".option-btn").forEach(btn => {
+                            btn.disabled = false;
+                            btn.style.opacity = "1";
+                            btn.classList.remove("ring-2", "ring-green-400", "ring-red-400");
+                        });
+                        loadQuestion();
+                    }, 2000);
+                } else {
+                    setTimeout(() => {
+                        showResults();
+                    }, 2000);
+                }
+            }
+    
+            function showResults() {
+                document.getElementById("quiz-box").classList.add("hidden");
+                
+                const percentage = Math.round((score / quiz.length) * 100);
+                let message = "";
+                
+                if (percentage >= 90) {
+                    message = "🌟 Excellent! You're a programming expert!";
+                } else if (percentage >= 70) {
+                    message = "👍 Great job! You have solid programming knowledge!";
+                } else if (percentage >= 50) {
+                    message = "👌 Good effort! Keep practicing to improve!";
+                } else {
+                    message = "📚 Keep learning! Practice makes perfect!";
+                }
+    
+                document.getElementById("final-score").innerHTML = `📊 Your Score: ${score}/${quiz.length} (${percentage}%)`;
+                document.getElementById("score-message").textContent = message;
+                document.getElementById("result").classList.remove("hidden");
+            }
+    
+            function restartQuiz() {
+                current = 0;
+                score = 0;
+                document.getElementById("result").classList.add("hidden");
+                document.getElementById("quiz-box").classList.remove("hidden");
+                document.getElementById("feedback").textContent = "";
+                document.getElementById("feedback").className = "mt-4 text-lg font-semibold min-h-[24px]";
+                
+                // Re-enable all buttons
+                document.querySelectorAll(".option-btn").forEach(btn => {
+                    btn.disabled = false;
+                    btn.style.opacity = "1";
+                    btn.classList.remove("ring-2", "ring-green-400", "ring-red-400");
+                });
+                
+                loadQuestion();
+            }
+            
+            window.onload = function() {
+                loadQuestion();
+                document.querySelectorAll(".option-btn").forEach(btn => {
+                    btn.addEventListener("click", selectAnswer);
+                });
+            }
+        </script>
+
+
+        
+
+            
+        </script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                content: ["./src//*.{html,js}"],
+                theme: {
+                    name: "Retro",
+                    fontFamily: {
+                        sans: [
+                            "Open Sans",
+                            "ui-sans-serif",
+                            "system-ui",
+                            "sans-serif",
+                            '"Apple Color Emoji"',
+                            '"Segoe UI Emoji"',
+                            '"Segoe UI Symbol"',
+                            '"Noto Color Emoji"'
+                        ]
+                    },
+                    extend: {
+                        fontFamily: {
+                            title: [
+                                "Josefin Sans",
+                                "ui-sans-serif",
+                                "system-ui",
+                                "sans-serif",
+                                '"Apple Color Emoji"',
+                                '"Segoe UI Emoji"',
+                                '"Segoe UI Symbol"',
+                                '"Noto Color Emoji"'
+                            ],
+                            body: [
+                                "Open Sans",
+                                "ui-sans-serif",
+                                "system-ui",
+                                "sans-serif",
+                                '"Apple Color Emoji"',
+                                '"Segoe UI Emoji"',
+                                '"Segoe UI Symbol"',
+                                '"Noto Color Emoji"'
+                            ]
+                        },
+                        colors: {
+                            neutral: {
+                                50: "#ECE3CB",
+                                100: "#E5DCC5",
+                                200: "#DED5BF",
+                                300: "#D7CFB9",
+                                400: "#D0C8B3",
+                                500: "#C9C1AD",
+                                600: "#5E5B51",
+                                700: "#47443D",
+                                800: "#2F2D29",
+                                900: "#181714",
+                                DEFAULT: "#ECE3CB"
+                            },
+                            primary: {
+                                50: "#FDF5F4",
+                                100: "#FDF0EF",
+                                200: "#FADFDE",
+                                300: "#EF9994",
+                                400: "#D78A85",
+                                500: "#BF7A76",
+                                600: "#B3736F",
+                                700: "#8F5C59",
+                                800: "#6C4543",
+                                900: "#543634",
+                                DEFAULT: "#EF9994"
+                            }
+                        }
+                    },
+                    fontSize: {
+                        xs: ["12px", {lineHeight: "19.200000000000003px"}],
+                        sm: ["14px", {lineHeight: "21px"}],
+                        base: ["16px", {lineHeight: "25.6px"}],
+                        lg: ["18px", {lineHeight: "27px"}],
+                        xl: ["20px", {lineHeight: "28px"}],
+                        "2xl": ["24px", {lineHeight: "31.200000000000003px"}],
+                        "3xl": ["30px", {lineHeight: "36px"}],
+                        "4xl": ["36px", {lineHeight: "41.4px"}],
+                        "5xl": ["48px", {lineHeight: "52.800000000000004px"}],
+                        "6xl": ["60px", {lineHeight: "66px"}],
+                        "7xl": ["72px", {lineHeight: "75.60000000000001px"}],
+                        "8xl": ["96px", {lineHeight: "100.80000000000001px"}],
+                        "9xl": ["128px", {lineHeight: "134.4px"}]
+                    },
+                    borderRadius: {
+                        none: "0px",
+                        sm: "3.5px",
+                        DEFAULT: "7px",
+                        md: "10.5px",
+                        lg: "14px",
+                        xl: "21px",
+                        "2xl": "28px",
+                        "3xl": "42px",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        0: "0px",
+                        1: "4px",
+                        2: "8px",
+                        3: "12px",
+                        4: "16px",
+                        5: "20px",
+                        6: "24px",
+                        7: "28px",
+                        8: "32px",
+                        9: "36px",
+                        10: "40px",
+                        11: "44px",
+                        12: "48px",
+                        14: "56px",
+                        16: "64px",
+                        20: "80px",
+                        24: "96px",
+                        28: "112px",
+                        32: "128px",
+                        36: "144px",
+                        40: "160px",
+                        44: "176px",
+                        48: "192px",
+                        52: "208px",
+                        56: "224px",
+                        60: "240px",
+                        64: "256px",
+                        72: "288px",
+                        80: "320px",
+                        96: "384px",
+                        px: "1px",
+                        0.5: "2px",
+                        1.5: "6px",
+                        2.5: "10px",
+                        3.5: "14px"
+                    }
+                },
+                plugins: [],
+                important: "#webcrumbs"
+            }
+        </script>
+    </body>
+</html>
+<script src="Quiz.py"></script>
